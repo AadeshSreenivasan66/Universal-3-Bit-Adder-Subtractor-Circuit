@@ -8,15 +8,15 @@ You can also include images in this folder and reference them in the markdown. E
 -->
 
 ## How it works
-The 3-bit Adder/Subtractor is designed to perform both addition and subtraction on two 3-bit inputs, A and B, depending on the value of the control input k. The operation is based on the use of XOR gates and full adders, which together implement two’s complement subtraction.
+The 3-bit Adder/Subtractor can perform both addition and subtraction on two 3-bit inputs A and B, depending on the value of the selection input k.
 
 Addition Mode (k = 0)
-Each bit of B is XORed with k. When k = 0, the XOR output is the same as B. The circuit then adds A and B directly using the full adders, with the initial carry-in set to 0.
+Each bit of B is XORed with k. When k = 0, the XOR output equals B. The three full adders then compute A + B using the XOR outputs as input, with the initial carry-in of the least significant bit set to 0.
 
 Subtraction Mode (k = 1)
-When k = 1, each bit of B is inverted by the XOR gates, producing B'. This is the first step in two’s complement subtraction. The carry-in of the least significant bit is also set to 1, making the operation equivalent to A + B' + 1, which computes A - B.
+When k = 1, the XOR gates invert each bit of B, producing B'. The initial carry-in of the LSB full adder is set to 1. This effectively computes A + B' + 1, which is the two’s complement subtraction (A - B). The full adders handle the bitwise addition and generate the final result.
 
-The outputs from the full adders represent the result of the operation, with an extra bit for carry-out or sign representation if needed.
+This design efficiently allows both operations using the same hardware, with XOR gates acting as conditional inverters and full adders performing the arithmetic.
 
 ## How to test
 1)Addition Test:
