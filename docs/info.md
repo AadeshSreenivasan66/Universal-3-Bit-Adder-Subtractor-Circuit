@@ -37,3 +37,16 @@ Add two numbers where the result exceeds 3 bits and verify how carry-out is hand
 
 4)Consistency Checks:
 Run a series of addition and subtraction operations and cross-check with manual calculations or simulation tools to ensure accuracy.
+
+## Truth Table
+| A (3-bit) | B (3-bit) | k | Operation | Result (4-bit) |
+| --------- | --------- | - | --------- | -------------- |
+| 101       | 011       | 0 | 5 + 3     | 1000           |
+| 101       | 011       | 1 | 5 - 3     | 0010           |
+| 010       | 101       | 0 | 2 + 5     | 0111           |
+| 010       | 101       | 1 | 2 - 5     | 1111           |
+| 111       | 001       | 0 | 7 + 1     | 1000           |
+| 111       | 001       | 1 | 7 - 1     | 0110           |
+| 000       | 000       | 0 | 0 + 0     | 0000           |
+| 000       | 000       | 1 | 0 - 0     | 0000           |
+
